@@ -1,0 +1,22 @@
+### This is the content of your .gitignore file
+### -------------------------------------------
+# Ignore All
+*.csv
+*.db
+*.xlsx
+*.xlsm
+*.accdb
+*.pdf
+*.env
+*.txt
+*.pbix
+*.ipynb
+*.xls
+*.png
+*.zip
+*.exe
+
+# !Support/BT_Utilization.xlsx
+
+# DO-NOT ignore specific file
+# !DBB/Tool Input.xlsx
