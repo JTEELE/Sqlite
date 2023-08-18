@@ -2,16 +2,20 @@ import glob
 import pandas as pd
 import sqlite3
 import re
-NAME =  'test' #input('Name this database: ') #db name, #Update
-CONN = sqlite3.connect(f"DB\\{NAME}.db")
-FOLDER = input('Folder? (y/n):') =='y'
+NAME =  input('Name this database: ')
+FOLDER = input('Upload multiple files? (y/n): ') =='y'
 FILE_TYPE = "." + input("Enter File Type (xlsx,csv,dat): ")
 DIRECTORY = input("Paste entire folder path: ")
 EXCEL_FILES = glob.glob(rf'{DIRECTORY}' + f'/*{FILE_TYPE}')
-DROP_COL = ['index','Unnamed: 0']
-for item in EXCEL_FILES:
-    print(item)
-
+DROP_COL = ['index','Unnamed: 0','0']
+if len(EXCEL_FILES) > 0:
+    CONN = sqlite3.connect(f"DB\\{NAME}.db")
+    for item in EXCEL_FILES:
+        print(item)
+    ERROR = False
+else:
+    ERROR = True
+    
 class SQLite:
     def __init__(
     self,
@@ -83,4 +87,7 @@ def main(NAME,CONN,FOLDER,DIRECTORY,EXCEL_FILES,FILE_TYPE,DROP_COL):
         print(table[0])
     cursor.close()
     
-main(NAME,CONN,FOLDER,DIRECTORY,EXCEL_FILES,FILE_TYPE,DROP_COL)
+if __name__ == "__main__":
+    print(f"Folder Selection: {FOLDER}")
+    if not ERROR:
+        main(NAME,CONN,FOLDER,DIRECTORY,EXCEL_FILES,FILE_TYPE,DROP_COL)
