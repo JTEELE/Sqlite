@@ -1,22 +1,8 @@
-### This is the content of your .gitignore file
-### -------------------------------------------
-# Ignore All
-*.csv
-*.db
-*.xlsx
-*.xlsm
-*.accdb
-*.pdf
-*.env
-*.txt
-*.pbix
-*.ipynb
-*.xls
-*.png
-*.zip
-*.exe
+# Ignore everything
+*
 
-# !Support/BT_Utilization.xlsx
+# But not .py files
+!*.py
 
-# DO-NOT ignore specific file
-# !DBB/Tool Input.xlsx
+# Ignore DATA folder
+DATA/

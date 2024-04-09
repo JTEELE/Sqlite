@@ -71,8 +71,6 @@ def remove_special_characters(string):
     cleaned_string = re.sub(pattern, "", string)
     return cleaned_string
 
-
-
 def main(NAME,CONN,FOLDER,DIRECTORY,EXCEL_FILES,FILE_TYPE,DROP_COL):
     sqlite_class = SQLite(NAME,CONN,FOLDER,DIRECTORY,EXCEL_FILES,FILE_TYPE,DROP_COL)
     if not FOLDER:
