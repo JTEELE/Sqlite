@@ -6,3 +6,5 @@
 
 # Ignore DATA folder
 DATA/
+
+.codegpt
