@@ -201,8 +201,7 @@ class Application:
         for index, op in enumerate(self.operators):
             ttk.Label(filter_input_window, text=op).grid(row=index+1, column=0, padx=10, pady=5, sticky='e')
             entry = ttk.Entry(filter_input_window)
-            # Prepopulate with the last input value if it exists
-            previous_value = self.operator_mapping[op]
+            previous_value = self.operator_mapping[op] # Prepopulate with the last input value if it exists
             if column in self.field_filters and self.field_filters[column][0] == op:
                 previous_value = self.field_filters[column][1]
             entry.insert(0, previous_value)
